@@ -1,34 +1,4 @@
-/**********************************************************************
-*          Copyright (c) 2016, Hogeschool voor de Kunsten Utrecht
-*                      Hilversum, the Netherlands
-*                          All rights reserved
-***********************************************************************
-*  This program is free software: you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License as published by
-*  the Free Software Foundation, either version 3 of the License, or
-*  (at your option) any later version.
-*
-*  This program is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*
-*  You should have received a copy of the GNU General Public License
-*  along with this program.
-*  If not, see <http://www.gnu.org/licenses/>.
-***********************************************************************
-*
-*  File name     : audio_io.h
-*  System name   : Audio I/O
-* 
-*  Description   : Audio input and output header file
-*		   Wrapper class for portaudio
-*
-*
-*  Author        : Marc Groenewegen
-*  E-mail        : marcg@dinkum.nl
-*
-**********************************************************************/
+
 
 #ifndef _AUDIO_IO_H_
 #define _AUDIO_IO_H_
@@ -50,17 +20,16 @@ using namespace std;
  * - Read and write
  */
 
-#define AUDIO_IO_WRITEONLY	1
-#define AUDIO_IO_READONLY	2
-#define AUDIO_IO_READWRITE	3
-
+#define AUDIO_IO_WRITEONLY 1
+#define AUDIO_IO_READONLY 2
+#define AUDIO_IO_READWRITE 3
 
 class Audio_IO
 {
 public:
   // Constructors
   Audio_IO();
-  Audio_IO(int samplerate,int nrofchannels);
+  Audio_IO(int samplerate, int nrofchannels);
 
   // Destructor
   ~Audio_IO();
@@ -91,7 +60,7 @@ private:
   PaStreamParameters inputParameters;
   PaStream *stream;
   PaError err;
-  int input_device,output_device;
+  int input_device, output_device;
   int nrofdevices;
   int samplerate;
   static int nrofchannels;
@@ -103,6 +72,4 @@ private:
 
 }; // Audio_IO{}
 
-
 #endif // _AUDIO_IO_H_
-
